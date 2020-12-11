@@ -1,11 +1,11 @@
 <template>
 <v-row>
     <v-col align="center">
-  <v-card tile color="rgba(255, 255, 255, 0.5)" class="card">
-      <h3>{{title}}</h3>
-      <p>{{description}}</p>
-      <p>{{link}}</p>
-      <a v-bind:href="gitLink" target='blank'>GitHub репозиторий</a>
+  <v-card tile color="rgba(255, 255, 255, 0.0)" class="card">
+      <h3 class="white--text">{{title}}</h3>
+      <p class="white--text">{{description}}</p>
+      <p class="white--text">{{link}}</p>
+      <a v-bind:href="gitLink" target='blank' class="white--text">GitHub репозиторий</a>
   </v-card>
       </v-col>
 </v-row>
@@ -33,5 +33,6 @@ export default {
 <style>
 .card {
   width: 30%;
+  color: white;
 }
 </style>

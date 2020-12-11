@@ -1,9 +1,9 @@
 <template>
 <v-row>
     <v-col align="center">
-        <v-card tile color="rgba(255, 255, 255, 0.3)" class="card">
-            <h3>{{title}}</h3>
-            <p>{{description}}</p>
+        <v-card tile color="rgba(255, 255, 255, 0.0)" class="card">
+            <h3 class="white--text">{{title}}</h3>
+            <p class="white--text">{{description}}</p>
         </v-card>
     </v-col>
 </v-row>
