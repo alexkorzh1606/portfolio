@@ -26,7 +26,7 @@
         <v-btn v-bind:href="gitLink" text target="blank">
           <span class="text-center">GitHub репозиторий</span>
         </v-btn>
-        <v-btn v-bind:href="link" text target="blank" disabled>
+        <v-btn v-bind:href="link" text target="blank" v-bind:disabled="disabledStatus">
           <span class="text-center">Демонстрация</span>
         </v-btn>
       </v-card-text>
@@ -45,6 +45,7 @@ export default {
     link: String,
     img: String,
     gitLink: String,
+    disabledStatus: String,
   },
   computed: {
     ...mapGetters([

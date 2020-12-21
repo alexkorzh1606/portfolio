@@ -8,6 +8,7 @@
             :img="item.img"
             :link="item.link"
             :gitLink="item.gitLink"
+            :disabledStatus="item.disabledStatus"
         />
   </div>
 </template>
