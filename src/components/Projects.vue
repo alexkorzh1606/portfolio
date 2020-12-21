@@ -1,14 +1,37 @@
 <template>
-<v-row>
-    <v-col align="center">
-  <v-card tile color="rgba(255, 255, 255, 0.0)" class="card">
-      <h3 class="white--text">{{title}}</h3>
-      <p class="white--text">{{description}}</p>
-      <p class="white--text">{{link}}</p>
-      <a v-bind:href="gitLink" target='blank' class="white--text">GitHub репозиторий</a>
-  </v-card>
-      </v-col>
-</v-row>
+  <v-hover v-slot="{ hover }" style="margin: 30px 0;">
+    <v-card
+      class="mx-auto"
+      max-width="600"
+    >
+      <v-img
+
+      >
+        <h3 style="padding: 15px;">{{title}}</h3>
+      <p style="padding: 15px;">{{description}}</p>
+        <v-expand-transition>
+          <div
+            v-if="hover"
+            class="d-flex transition-fast-in-fast-out blue darken-2
+            v-card--reveal display-3 white--text"
+            v-bind:style="{backgroundImage: `url(${img})`}"
+          >
+          </div>
+        </v-expand-transition>
+      </v-img>
+      <v-card-text
+        class="pt-6"
+        style="position: relative;"
+      >
+        <v-btn v-bind:href="gitLink" text target="blank">
+          <span class="text-center">GitHub репозиторий</span>
+        </v-btn>
+        <v-btn v-bind:href="link" text target="blank" disabled>
+          <span class="text-center">Демонстрация</span>
+        </v-btn>
+      </v-card-text>
+    </v-card>
+  </v-hover>
 </template>
 
 <script>
@@ -20,6 +43,7 @@ export default {
     title: String,
     description: String,
     link: String,
+    img: String,
     gitLink: String,
   },
   computed: {
@@ -33,6 +57,15 @@ export default {
 <style>
 .card {
   width: 30%;
-  color: white;
+}
+.v-card--reveal {
+  align-items: center;
+  opacity: 1;
+  bottom: 0;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover
 }
 </style>
